@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Update Department</title>
+</head>
+<body>
+<form th:action="@{/departments/{id}/update(id=${odlDepartment.id})}"
+      th:object="${odlDepartment}"
+      th:method="POST">
+
+
+  <div>
+    <label>
+      <input th:field="*{name}" placeholder="Name">
+    </label>
+  </div>
+
+  <div>
+    <input type="submit" value="update">
+  </div>
+</form>
+
+</body>
+</html>
+

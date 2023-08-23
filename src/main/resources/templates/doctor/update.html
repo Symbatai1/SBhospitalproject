@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Doctor</title>
+</head>
+<body>
+<form th:action="@{/doctors/{hospitalId}/{doctorId}/update(hospitalId=${hospitalId},doctorId=${doctor.id})}"
+      th:object="${doctor}"
+      th:method="POST">
+
+    <div>
+        <label>
+            <input th:field="*{firstName}" placeholder="First Name">
+        </label>
+        <div>
+            <label>
+                <input th:field="*{lastName}" placeholder="Last Name">
+            </label>
+        </div>
+        <label>
+            <input th:field="*{position}" placeholder="Position">
+        </label>
+    </div>
+    <div>
+        <label>
+            <input th:field="*{email}" placeholder="Email">
+        </label>
+    </div>
+    <div>
+        <input type="submit" value="update">
+    </div>
+</form>
+
+</body>
+</html>
